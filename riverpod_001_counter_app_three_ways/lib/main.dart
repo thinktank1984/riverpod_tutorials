@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_counter_app_three_ways/pages/counter_change_notifier_page.dart';
-import 'package:riverpod_counter_app_three_ways/pages/counter_state_notifier_page.dart';
-import 'package:riverpod_counter_app_three_ways/pages/counter_state_provider_page.dart';
+//import 'package:riverpod_counter_app_three_ways/pages/update_block_page.dart';
+import 'package:riverpod_counter_app_three_ways/pages/update_block_page2.dart';
+//import 'package:riverpod_counter_app_three_ways/pages/counter_state_notifier_page.dart';
+//import 'package:riverpod_counter_app_three_ways/pages/counter_state_provider_page.dart';
 
 const changeNotifierRoute = 'changeNotifier';
-const stateNotifierRoute = 'stateNotifier';
-const stateProviderRoute = 'stateProvider';
+
 
 void main() => runApp(MyApp());
 
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => Home(),
-          changeNotifierRoute: (context) => CounterChangeNotifierPage(),
-          stateNotifierRoute: (context) => CounterStateNotifierPage(),
-          stateProviderRoute: (context) => CounterStateProviderPage(),
+          changeNotifierRoute: (context) => BlockChangeNotifierPage2(items: List<String>.generate(10000, (i) => 'Item $i'),),
+          //stateNotifierRoute: (context) => CounterStateNotifierPage(),
+          //stateProviderRoute: (context) => CounterStateProviderPage(),
         },
       ),
     );
@@ -47,13 +47,13 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, stateNotifierRoute);
+                //Navigator.pushNamed(context, stateNotifierRoute);
               },
               child: Text('State Notifier'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, stateProviderRoute);
+                //Navigator.pushNamed(context, stateProviderRoute);
               },
               child: Text('State Provider'),
             ),
